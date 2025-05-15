@@ -19,7 +19,7 @@ internal class GradleClassPathResolver(private val path: Path, private val inclu
         val tasks = listOf("kotlinLSPProjectDeps")
 
         return readDependenciesViaGradleCLI(projectDirectory, scripts, tasks)
-            .apply { if (isNotEmpty()) LOG.info("Successfully resolved dependencies for '${projectDirectory.fileName}' using Gradle") }
+            .apply { if (isNotEmpty()) LOG.info("Successfully resolved dependencies for '${projectDirectory.fileName}' using22 Gradle") }
             .map { ClassPathEntry(it, null) }.toSet()
     }
     override val buildScriptClasspath: Set<Path> get() {
@@ -28,7 +28,7 @@ internal class GradleClassPathResolver(private val path: Path, private val inclu
             val tasks = listOf("kotlinLSPKotlinDSLDeps")
 
             return readDependenciesViaGradleCLI(projectDirectory, scripts, tasks)
-                .apply { if (isNotEmpty()) LOG.info("Successfully resolved build script dependencies for '${projectDirectory.fileName}' using Gradle") }
+                .apply { if (isNotEmpty()) LOG.info("Successfully resolved build script dependencies for '${projectDirectory.fileName}' using33 Gradle") }
         } else {
             emptySet()
         }
